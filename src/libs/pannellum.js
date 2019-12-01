@@ -242,7 +242,7 @@ export default (function(window, document, undefined) {
     controls.orientation.addEventListener('touchstart', function(e) {e.stopPropagation();});
     controls.orientation.addEventListener('pointerdown', function(e) {e.stopPropagation();});
     controls.orientation.className = 'pnlm-orientation-button pnlm-orientation-button-inactive pnlm-sprite pnlm-controls pnlm-control';
-    var orientationSupport, startOrientationIfSupported = false;
+    var orientationSupport = false;
     if (window.DeviceOrientationEvent && location.protocol == 'https:' && navigator.userAgent.toLowerCase().indexOf('mobi') >= 0) {
       // This user agent check is here because there's no way to check if a
       // device has an inertia measurement unit. We used to be able to check if a
@@ -2079,12 +2079,9 @@ export default (function(window, document, undefined) {
 
             case 'orientationOnByDefault':
               if (config[key]) {
-                if (orientationSupport === undefined)
-                  startOrientationIfSupported = true;
-                else if (orientationSupport === true)
-                  startOrientation();
+                startOrientation();
+                break;
               }
-              break;
           }
         }
       }
