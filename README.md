@@ -1,4 +1,6 @@
-# react-pannellum
+# forked-react-pannellum
+
+> This is a forked version of [https://www.npmjs.com/package/react-pannellum/](React-pannellum)
 
 > A library show panorama image for react
 
